@@ -1,27 +1,11 @@
-# Cadastro
+# Dashboard simples com Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 1.7.4.
 
-## Development server
+## Servidor de Desenvolvimento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Execute ng serve para um servidor de desenvolvimento. No navegador utilize a rota http://localhost:4200/. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-## Code scaffolding
+## Descrição
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Este projeto contem uma dashboard simples com 3 paginas, sendo uma pagina principal onde são exibidos os dados de cadastro, uma pagina de cadastro com algumas mascaras nos inputs, e uma pagina de configuração onde e possivel estilizar a pagina.

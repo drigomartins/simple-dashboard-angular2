@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark {{background}}">
+    <img src="http://draken.bilheteriadigital.com/assets/img/logobd.png" alt="logo">
+    <input type="text" class="col-4 form-control" placeholder="Procurar...">
+    <div class="col-5"></div>
+    <a class="h6 navbar-brand text-white float-right" [routerLink]="['/cadastro']" style="font-size: 15px"><i class="fas fa-sign-out-alt"></i> Sair</a>
+</nav>
+<nav id="sideNav" class="col-2 {{background}} but" style="padding: 0px">
+    <a class="col-12 h6 navbar-brand text-white but" [routerLink]="['']"><i class="fas fa-home"></i> Inicio</a>
+    <a class="col-12 h6 navbar-brand text-white but" [routerLink]="['/cadastro']"><i class="fas fa-clone"></i> Cadastro</a>
+    <a class="col-12 h6 navbar-brand text-white but" [routerLink]="['/configuracoes']"><i class="fas fa-bars"></i> Configurações</a>
+</nav>
+<div class="col-10 offset-2">
+    <router-outlet></router-outlet>
+</div>

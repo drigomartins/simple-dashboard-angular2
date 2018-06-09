@@ -1,0 +1,19 @@
+<div class="container">
+    <br>
+    <h4>Configurações</h4>
+    <hr>
+    <form (click)="salvar()">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Cor do Background</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="cor" [(ngModel)]="cor">
+                <option value="bg-dark">preto</option>
+                <option value="bg-primary">azul</option>
+                <option value="bg-danger">vermelho</option>
+                <option value="bg-success">verde</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+
+

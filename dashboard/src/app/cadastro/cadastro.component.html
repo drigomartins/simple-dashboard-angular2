@@ -1,0 +1,63 @@
+<div class="container">
+    <br>
+    <form [formGroup]="meuForm" (submit)="cadastrar()">
+        <div class="form-row">
+            <div class="col-md-8 mb-6">
+                <label for="validationServer01">Nome Completo</label>
+                <input name="nome" [(ngModel)]="usuario.nome" formControlName="nome" type="text" class="form-control {{meuForm.controls.nome.touched && meuForm.controls.nome.invalid ? 'is-invalid' : (meuForm.controls.nome.value != null)?'is-valid':'' }}"
+                    placeholder="Nome" required>
+                <div class="invalid-feedback" *ngIf="meuForm.controls.nome.touched && meuForm.controls.nome.invalid">
+                    Digite seu nome Completo
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServerUsername">CPF</label>
+                <input name="nome" [(ngModel)]="usuario.cpf" formControlName="cpf" type="text" class="form-control {{meuForm.controls.cpf.touched && meuForm.controls.cpf.invalid ? 'is-invalid' : (meuForm.controls.cpf.value != null)?'is-valid':'' }}"
+                    placeholder="Digite seu CPF" mask="000.000.000-00">
+                <div class="invalid-feedback" *ngIf="meuForm.controls.cpf.invalid">
+                    CPF Invalido
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-2 mb-2">
+                <label for="validationServer04">Estado</label>
+                <select #seila (change)="buscaCidade(seila.value)" [(ngModel)]="usuario.estado" formControlName="estado" class="form-control {{meuForm.controls.estado.touched && meuForm.controls.estado.invalid ? 'is-invalid' : (meuForm.controls.estado.value != null)?'is-valid':'' }}">
+                    <option [value]="undefined">Selecione o Estado</option>
+                    <option *ngFor="let estado of uf" [value]="estado.id">{{estado.sigla}}</option>
+                </select>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer03">Cidade</label>
+                <select [(ngModel)]="usuario.cidade" formControlName="cidade" class="form-control {{meuForm.controls.cidade.touched && meuForm.controls.cidade.invalid ? 'is-invalid' : (meuForm.controls.cidade.value != null)?'is-valid':'' }}">
+                    <option>Selecione a Cidade</option>
+                    <option *ngFor="let cit of cidade">{{cit.nome}}</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationServer05">CEP</label>
+                <input name="cep" [(ngModel)]="usuario.cep" formControlName="cep" type="text" class="form-control {{meuForm.controls.cep.touched && meuForm.controls.cep.invalid ? 'is-invalid' : (meuForm.controls.cep.value != null)?'is-valid':'' }}"
+                    id="validationServer05" placeholder="CEP" mask="00000-000">
+                <div class="invalid-feedback" *ngIf="meuForm.controls.cep.invalid">
+                    CEP Invalido
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationServer05">Telefone</label>
+                <input name="telefone" [(ngModel)]="usuario.telefone" formControlName="telefone" type="text" class="form-control {{meuForm.controls.telefone.touched && meuForm.controls.telefone.invalid ? 'is-invalid' : (meuForm.controls.telefone.value != null)?'is-valid':'' }}"
+                    id="validationServer05" placeholder="Telefone" mask="(00)0000-0000">
+                <div class="invalid-feedback" *ngIf="meuForm.controls.telefone.invalid">
+                    Telefone Invalido
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-2 mb-2">
+                <label for="validationServer04">Data</label>
+                <my-date-picker name="data" [options]="myDatePickerOptions"
+                    [(ngModel)]="usuario.data" formControlName="data" required></my-date-picker>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Cadastrar</button>
+    </form>
+</div>

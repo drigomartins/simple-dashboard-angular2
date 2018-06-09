@@ -1,0 +1,47 @@
+<div class="container">
+    <br>
+    <div *ngFor="let list of lista.slice().reverse(); let i=index">
+        <div class="card" *ngIf="i<1">
+            <div class="card-body">
+                <h5 class="card-title">Ultimo Cadastro</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{list.nome}}</h6>
+                <ul class="list-inline" style="margin: 0px">
+                    <li class="list-inline-item">
+                        <b>CPF:</b> {{list.cpf}}</li>
+                    <li class="list-inline-item">
+                        <b>Cidade:</b> {{list.cidade}}/GO</li>
+                    <li class="list-inline-item">
+                        <b>CEP:</b> {{list.cep}}</li>
+                    <li class="list-inline-item">
+                        <b>Telefone:</b> {{list.telefone}}</li>
+                    <li class="list-inline-item">
+                        <b>Data:</b> {{list.data}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <h5>Usuarios Cadastrados
+        <br>
+        <small class="text-muted">Ultimos 5 usuarios</small>
+    </h5>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Cidade</th>
+                <th scope="col">Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let list of lista.slice().reverse(); let i=index">
+                <th scope="row" *ngIf="i<5">{{list.nome}}</th>
+                <td *ngIf="i<5">{{list.cpf}}</td>
+                <td *ngIf="i<5">{{list.cidade}}</td>
+                <td *ngIf="i<5">{{list.telefone}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

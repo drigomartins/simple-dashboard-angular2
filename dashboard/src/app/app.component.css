@@ -1,0 +1,12 @@
+#sideNav {
+     position: absolute;
+     height: calc(100% - 56px);
+ }
+.but{
+    font-size: 15px;
+}
+ .but :hover{
+    border-right-style: solid;
+    border-right-color: crimson;
+    border-right-width: 5px;
+ }
